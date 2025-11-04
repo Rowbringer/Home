@@ -1,1 +1,54 @@
 
+<style>
+    .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--roblox-border);
+        margin-bottom: 20px;
+    }
+    .profile-info h1 {
+        margin-bottom: 5px;
+    }
+    .stats-grid {
+        display: flex;
+        gap: 20px;
+        margin-top: 15px;
+    }
+    .stat-box {
+        background-color: var(--roblox-light-dark);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+    }
+    .stat-box span {
+        display: block;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--roblox-blue);
+    }
+</style>
+
+<div class="profile-header">
+    <div class="user-avatar" style="width: 120px; height: 120px;">
+        <img src="mock-avatar.jpg" alt="User Avatar">
+    </div>
+    <div class="profile-info">
+        <h1>CloneBloxDev</h1>
+        <p style="color: #aaa;">Bio: Just building some epic things and collecting Robux!</p>
+        <div class="stats-grid">
+            <div class="stat-box"><span>456</span>Followers</div>
+            <div class="stat-box"><span>120</span>Following</div>
+            <div class="stat-box"><span>8</span>Friends</div>
+        </div>
+        <button class="play-button" style="width: auto; margin-top: 15px; background-color: #1abc9c;" onclick="alert('Sent a Friend Request!')">➕ Add Friend</button>
+    </div>
+</div>
+
+<h2 class="section-title">✨ Favorite Experiences</h2>
+<div class="game-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+    <div class="game-tile"><div class="game-tile-image">Favorite 1</div></div>
+    <div class="game-tile"><div class="game-tile-image">Favorite 2</div></div>
+    <div class="game-tile"><div class="game-tile-image">Favorite 3</div></div>
+</div>
