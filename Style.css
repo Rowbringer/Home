@@ -1,0 +1,171 @@
+/* style.css - Global Styles */
+
+:root {
+    --roblox-blue: #00a2ff;
+    --roblox-dark: #191919;
+    --roblox-light-dark: #232323;
+    --roblox-text: #fff;
+    --roblox-border: #3c3c3c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--roblox-dark);
+    color: var(--roblox-text);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--roblox-light-dark);
+    border-bottom: 1px solid var(--roblox-border);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    color: var(--roblox-blue);
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--roblox-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: var(--roblox-blue);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info .robux {
+    color: #ffd700; /* Gold/Yellow for Robux */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--roblox-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Main Content Layout --- */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Game Tiles/Cards --- */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.game-tile, .item-card {
+    background-color: var(--roblox-light-dark);
+    border: 1px solid var(--roblox-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.game-tile:hover, .item-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--roblox-blue);
+}
+
+.game-tile-image {
+    width: 100%;
+    height: 150px;
+    background-color: #333; /* Placeholder background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.game-tile-content {
+    padding: 10px;
+}
+
+.game-tile-content h4 {
+    margin-bottom: 5px;
+    color: var(--roblox-text);
+}
+
+.game-tile-content p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.play-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: var(--roblox-blue);
+    color: var(--roblox-text);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.play-button:hover {
+    background-color: #007bbd;
+}
+
+/* --- Utility Classes --- */
+.section-title {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--roblox-blue);
+    padding-left: 10px;
+}
+
+/* --- Avatar & Shop Specific Styles (To be expanded in other sections) --- */
+/* For simplicity, many complex layouts will rely on this grid/card model */
