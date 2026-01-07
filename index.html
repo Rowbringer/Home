@@ -1,277 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Clone - 6 Pages in One</title>
-    <link rel="stylesheet" href="style.css"> 
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MINEBLOCK</title>
     <style>
-        /* Ensures the header stays on top while content sections scroll */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      /* -------------------------------------------
+            MINEBLOCK 3D THEME CSS
+            ------------------------------------------- */
+      /* General body styling: Earth tones for a block-building theme */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', Courier, monospace, sans-serif; /* Monospaced font for a retro blocky feel */
+        background-color: #C5D5A5; /* Light green/grass */
+        background-image: linear-gradient(to bottom, #C5D5A5 0%, #9DB38A 100%); /* Subtle earth-like gradient */
+        color: #000000;
+        text-align: center;
+      }
 
-        /* Defines the content area for each "page" */
-        .page-section {
-            padding: 40px 20px;
-            min-height: 100vh; /* Ensures each "page" fills the viewport vertically */
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 5px solid var(--roblox-dark); /* Visual separation */
-        }
+      /* Main header styled like classic block-game text */
+      h1 {
+        font-size: 3rem;
+        margin: 30px 0 5px;
+        color: #4C7F2E; /* Dark green (grass/leaf color) */
+        font-weight: bold;
+        text-shadow: 3px 3px 0px #ffffff; /* Blocky outline effect */
+      }
+
+      /* Credits text */
+      #credits {
+        font-size: 1rem;
+        color: #3D5A31; /* Darker green */
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-weight: bold;
+      }
+
+      /* Container for the main content block - Blocky and simple */
+      #content-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff; /* White content box */
+        border: 3px solid #6B493E; /* Thicker, brown/dirt border */
+        border-radius: 0; /* Blocky corners */
+        box-shadow: 0 4px 0px rgba(0,0,0,0.4); /* Chunky shadow */
+      }
+
+      /* Section headers within the container - Simple and blocky */
+      #content-container h2 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+        color: #333333; /* Dark headers */
+        font-weight: bold;
+        border-bottom: 2px solid #6B493E; /* Separator line */
+        padding-bottom: 5px;
+      }
+
+      /* Paragraph text */
+      p {
+        margin: 20px 0;
+        font-size: 1rem;
+        color: #111111;
+        line-height: 1.5;
+        text-align: left; /* Text alignment changed for readability */
+      }
+
+      /* Classic green download buttons (blocky style) */
+      a.download-button {
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 18px;
+        /* Green gradient for an earthy button */
+        background: linear-gradient(to bottom, #5B884C 0%, #3D5A31 100%);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid #334D2A; /* Darker green border */
+        border-radius: 0; /* Blocky corners */
+        box-shadow: 0 3px 0 #334D2A; /* Chunky shadow underneath */
+        transition: background 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+        cursor: pointer;
+      }
+
+      /* Hover effect */
+      a.download-button:hover {
+        background: linear-gradient(to bottom, #6DA359 0%, #4C7F2E 100%);
+      }
+
+      /* Active (click) effect */
+      a.download-button:active {
+        background: #3D5A31;
+        transform: translateY(3px); /* Pressed effect by matching shadow distance */
+        box-shadow: 0 0px 0 #334D2A; /* Shadow disappears when pressed */
+      }
+      
+      /* --- Sketchfab Embed Styling for Sneak Peak --- */
+      .sketchfab-embed-wrapper {
+          width: 90%;
+          max-width: 550px;
+          margin: 20px auto;
+          border: 3px solid #6B493E; /* Frame the viewer with dirt color */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .sketchfab-embed-wrapper iframe {
+          width: 100%;
+          height: 350px; /* Set a fixed height for the viewer */
+          display: block;
+      }
+
+      /* Styling for the video thumbnail */
+      .video-thumbnail {
+        max-width: 100%;
+        height: auto;
+        border: 3px solid #4C7F2E; /* Green border */
+        border-radius: 0;
+        margin: 15px 0 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      
+      #preview-section {
+          margin: 20px 0;
+      }
+
+      /* Countdown styling */
+      #countdown {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #A0522D; /* Sienna/Dirt color for countdown */
+        margin: 30px 0;
+        padding: 15px;
+        background-color: #F0E68C; /* Khaki/Sand color */
+        border: 2px solid #6B493E;
+        border-radius: 0;
+        display: inline-block;
+        text-align: center;
+      }
     </style>
-</head>
-<body>
-    <header>
-        <div class="logo"><a href="#discover">CloneBlox</a></div>
-        <nav>
-            <ul>
-                <li><a href="#discover">Discover</a></li>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#avatar">Avatar</a></li>
-                <li><a href="#create">Create</a></li>
-                <li><a href="#profile">Profile</a></li>
-            </ul>
-        </nav>
-        <div class="user-info">
-            <input type="search" placeholder="Search" style="padding: 5px; border-radius: 5px; border: none;">
-            <span class="robux">R$ 1,250</span>
-            <div class="user-avatar"><img src="mock-avatar.jpg" alt="User Avatar" style="width: 100%; height: 100%; object-fit: cover;"></div> 
-        </div>
-    </header>
+  </head>
+  <body>
+    <h1>MINEBLOCK!</h1>
     
-    <main>
-        
-        <section id="discover" class="page-section">
-            <h2 class="section-title">🚀 Featured Experiences</h2>
-            <div class="hero-banner" style="background-color: #333; height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px; border-radius: 8px; border: 2px solid var(--roblox-blue);">
-                <h3 style="color: var(--roblox-text); font-size: 2em; margin-bottom: 10px;">Your First Epic Game!</h3>
-                <p style="color: #ccc;">Over 500k active players this week.</p>
-            </div>
+    <p id="credits">made by BlockDev Studio</p>
+    
+    <div id="content-container">
+      
+      <h2>Downloads - The World Awaits!</h2>
+      
+      <p style="text-align: center;">
+        <a href="https://google.com/" class="download-button">download mineblock classic 1.0</a>
+        <a href="https://google.com/" class="download-button">download mineblock adventure 2.0</a>
+        <a href="https://google.com/" class="download-button">download mineblock survival 3.0</a>
+      </p>
 
-            <h2 class="section-title">🔥 Popular Now</h2>
-            <div class="game-grid" id="home-game-grid">
-                <div class="game-tile"><div class="game-tile-image">Obby World</div><div class="game-tile-content"><h4>Mega Obby</h4><p>⭐ 125k playing</p><button class="play-button" onclick="handlePlay('Mega Obby')">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Roleplay City</div><div class="game-tile-content"><h4>City RP 2</h4><p>⭐ 88k playing</p><button class="play-button" onclick="handlePlay('City RP 2')">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Survival X</div><div class="game-tile-content"><h4>Survival X</h4><p>⭐ 54k playing</p><button class="play-button" onclick="handlePlay('Survival X')">Play</button></div></div>
-            </div>
+      <p style="text-align: center;">
+        Click on any version—you will be led to a third-party site where you can download the ultimate block-building experience.
+      </p>
+      
+      <h2>Watch Preview MINEBLOCK 3D Survival Sim!!</h2>
 
-            <h2 class="section-title">⭐ Recommended for You</h2>
-            <div class="game-grid">
-                <div class="game-tile"><div class="game-tile-image">Adventure Game</div><div class="game-tile-content"><h4>Deep Space Obby</h4><p>⭐ 3k playing</p><button class="play-button" onclick="handlePlay('Deep Space Obby')">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tycoon Game</div><div class="game-tile-content"><h4>Restaurant Tycoon 3</h4><p>⭐ 1k playing</p><button class="play-button" onclick="handlePlay('Restaurant Tycoon 3')">Play</button></div></div>
-            </div>
-        </section>
+      <div id="preview-section">
+          <a href="http://www.youtube.com/watch?v=JTcYrRXUiZE" target="_blank" title="Watch Mineblock Preview on YouTube">
+              <img src="https://img.youtube.com/vi/JTcYrRXUiZE/hqdefault.jpg" alt="Mineblock Video Preview Thumbnail" class="video-thumbnail">
+          </a>
+          <p style="text-align: center;">
+              <a href="http://www.youtube.com/watch?v=JTcYrRXUiZE" class="download-button" target="_blank">Watch Preview</a>
+          </p>
+      </div>
 
+      <h2>About MINEBLOCK (The Blocky World)</h2>
+      <p>
+        **MINEBLOCK** is your definitive single-player offline sandbox simulation, dedicated to the golden age of block-building and survival gaming. Explore infinite, procedurally generated worlds made entirely of textured cubes! The experience includes all your favorite survival mechanics, from resource gathering and crafting to fighting mobs and exploring deep caves. 
+        <br><br>
+        Place and break blocks with ease using old-school block physics. Craft tools, armor, and elaborate structures. The world is pre-loaded with biomes to explore and hidden dungeons to conquer. Prepare for an authentic, immersive experience with classic sound effects and endless exploration—all available without needing an internet connection!
+      </p>
+      <h2>Game Sneak Peak (3D Block Model)</h2>
+      <div class="sketchfab-embed-wrapper"> 
+          <iframe title="Classic Blocky World Map Preview" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a032ecf352844b79a8c7861310cfcc2d/embed"> </iframe> 
+          <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center;"> 
+              <a href="https://sketchfab.com/3d-models/glass-houses-classic-roblox-map-a032ecf352844b79a8c7861310cfcc2d?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> Classic Blocky World Map </a> by <a href="https://sketchfab.com/djsalimh14?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> djsalimh14 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;">Sketchfab</a>
+          </p>
+      </div>
+      <div id="countdown"></div>
+    </div>
+    
+    <script>
+      // ----------------------------------------------------
+      // COUNTDOWN TIMER MODIFIED TO DISPLAY "OUT NOW"
+      // ----------------------------------------------------
+      // Set to a date in the past so it immediately shows the "released" message
+      var countDownDate = new Date("Jan 1, 2020 00:00:00").getTime();
 
-        <section id="games" class="page-section">
-            <h1 class="section-title">🎮 All Games</h1>
+      // Update every second
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
 
-            <div class="filters" style="display: flex; gap: 15px; margin-bottom: 20px; align-items: center;">
-                <label style="font-weight: bold; color: #ccc;">Filter By:</label>
-                <select style="padding: 8px; background-color: var(--roblox-light-dark); color: var(--roblox-text); border: 1px solid var(--roblox-border); border-radius: 5px;">
-                    <option>Popularity</option>
-                    <option>Player Count</option>
-                </select>
-                
-                <label style="font-weight: bold; color: #ccc;">Genre:</label>
-                <select style="padding: 8px; background-color: var(--roblox-light-dark); color: var(--roblox-text); border: 1px solid var(--roblox-border); border-radius: 5px;">
-                    <option>All</option>
-                    <option>Roleplay</option>
-                    <option>Obby</option>
-                </select>
-                
-                <button style="padding: 8px 15px; background-color: var(--roblox-blue); color: var(--roblox-text); border: none; border-radius: 5px; cursor: pointer;" onclick="alert('Applying filters...');">Apply Filters</button>
-            </div>
+        // Time calculations
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            <div class="game-grid" id="all-games-grid">
-                <div class="game-tile"><div class="game-tile-image">Tile 1</div><div class="game-tile-content"><h4>Game A</h4><p>⭐ 90k playing</p><button class="play-button">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tile 2</div><div class="game-tile-content"><h4>Game B</h4><p>⭐ 40k playing</p><button class="play-button">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tile 3</div><div class="game-tile-content"><h4>Game C</h4><p>⭐ 25k playing</p><button class="play-button">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tile 4</div><div class="game-tile-content"><h4>Game D</h4><p>⭐ 10k playing</p><button class="play-button">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tile 5</div><div class="game-tile-content"><h4>Game E</h4><p>⭐ 5k playing</p><button class="play-button">Play</button></div></div>
-                <div class="game-tile"><div class="game-tile-image">Tile 6</div><div class="game-tile-content"><h4>Game F</h4><p>⭐ 1k playing</p><button class="play-button">Play</button></div></div>
-            </div>
-        </section>
+        // Display result (will show negative if future date is used)
+        document.getElementById("countdown").innerHTML =
+          "First release drops in " + days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
 
-
-        <section id="shop" class="page-section">
-            <h1 class="section-title">🛍️ Marketplace (Catalog)</h1>
-
-            <div class="filters" style="display: flex; gap: 15px; margin-bottom: 20px;">
-                <select style="padding: 8px; background-color: var(--roblox-light-dark); color: var(--roblox-text); border: 1px solid var(--roblox-border); border-radius: 5px;">
-                    <option>Item Type: Hats</option>
-                    <option>Item Type: Gear</option>
-                </select>
-                <select style="padding: 8px; background-color: var(--roblox-light-dark); color: var(--roblox-text); border: 1px solid var(--roblox-border); border-radius: 5px;">
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                </select>
-            </div>
-
-            <div class="game-grid">
-                <div class="item-card">
-                    <div class="game-tile-image">Helmet Image</div>
-                    <div class="game-tile-content">
-                        <h4>Explorer Helmet</h4>
-                        <p style="color: #ffd700; font-weight: bold;">R$ 800</p>
-                        <button class="play-button" style="background-color: #4CAF50;" onclick="alert('Purchased Helmet!')">Buy Now</button>
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="game-tile-image">Sword Image</div>
-                    <div class="game-tile-content">
-                        <h4>Noob Slayer Sword</h4>
-                        <p style="color: #ffd700; font-weight: bold;">R$ 150</p>
-                        <button class="play-button" style="background-color: #4CAF50;" onclick="alert('Purchased Sword!')">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="avatar" class="page-section">
-            <h1 class="section-title">👤 Avatar Editor</h1>
-
-            <style>
-                .avatar-editor-layout {
-                    display: grid;
-                    grid-template-columns: 1fr 2fr;
-                    gap: 30px;
-                }
-                .avatar-display {
-                    background-color: var(--roblox-light-dark);
-                    border: 1px solid var(--roblox-border);
-                    border-radius: 8px;
-                    height: 500px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.2em;
-                }
-                .inventory-list {
-                    background-color: var(--roblox-light-dark);
-                    border: 1px solid var(--roblox-border);
-                    border-radius: 8px;
-                    padding: 20px;
-                }
-                .inventory-item {
-                    padding: 10px;
-                    margin-bottom: 5px;
-                    border-bottom: 1px solid var(--roblox-border);
-                    cursor: pointer;
-                    transition: background-color 0.2s;
-                }
-                .inventory-item:hover {
-                    background-color: #333;
-                }
-            </style>
-
-            <div class="avatar-editor-layout">
-                <div class="avatar-display" id="avatar-preview">
-                    <h3>Current Avatar View</h3>
-                    <p style="font-size: 0.8em; color: #aaa;">Click an item to 'equip' it (mock action)</p>
-                </div>
-                
-                <div class="inventory-list">
-                    <h2>Inventory & Categories</h2>
-                    <div class="category-tabs" style="display: flex; gap: 10px; margin: 15px 0;">
-                        <button style="padding: 8px 15px; background-color: var(--roblox-blue); color: var(--roblox-text); border: none; border-radius: 5px;">Hats</button>
-                        <button style="padding: 8px 15px; background-color: #444; color: var(--roblox-text); border: none; border-radius: 5px;">Shirts</button>
-                    </div>
-
-                    <div class="inventory-item" onclick="alert('Equipped Red Beanie')">Red Beanie (Hat)</div>
-                    <div class="inventory-item" onclick="alert('Equipped T-Shirt')">Dark T-Shirt (Shirt)</div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="profile" class="page-section">
-            <h1 class="section-title">👤 CloneBloxDev's Profile</h1>
-
-            <style>
-                .profile-header {
-                    display: flex;
-                    align-items: center;
-                    gap: 30px;
-                    padding-bottom: 20px;
-                    border-bottom: 1px solid var(--roblox-border);
-                    margin-bottom: 20px;
-                }
-                .stats-grid {
-                    display: flex;
-                    gap: 20px;
-                    margin-top: 15px;
-                }
-                .stat-box {
-                    background-color: var(--roblox-light-dark);
-                    padding: 15px;
-                    border-radius: 8px;
-                    text-align: center;
-                }
-                .stat-box span {
-                    display: block;
-                    font-size: 1.5em;
-                    font-weight: bold;
-                    color: var(--roblox-blue);
-                }
-            </style>
-
-            <div class="profile-header">
-                <div class="user-avatar" style="width: 120px; height: 120px;">
-                    <img src="mock-avatar.jpg" alt="User Avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
-                <div class="profile-info">
-                    <h1>CloneBloxDev</h1>
-                    <p style="color: #aaa;">Bio: Just building some epic things and collecting Robux!</p>
-                    <div class="stats-grid">
-                        <div class="stat-box"><span>456</span>Followers</div>
-                        <div class="stat-box"><span>120</span>Following</div>
-                    </div>
-                    <button class="play-button" style="width: auto; margin-top: 15px; background-color: #1abc9c;" onclick="alert('Sent a Friend Request!')">➕ Add Friend</button>
-                </div>
-            </div>
-
-            <h2 class="section-title">✨ Favorite Experiences</h2>
-            <div class="game-grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
-                <div class="game-tile"><div class="game-tile-image">Favorite 1</div></div>
-                <div class="game-tile"><div class="game-tile-image">Favorite 2</div></div>
-            </div>
-        </section>
-
-
-        <section id="create" class="page-section">
-            <h1 class="section-title">🔨 Creator Hub</h1>
-
-            <p style="font-size: 1.1em; margin-bottom: 30px; color: #ccc;">The place to build, manage, and monetize your experiences.</p>
-
-            <div class="create-options-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div class="game-tile" onclick="alert('Launching Mock Studio...');" style="cursor: pointer;">
-                    <div class="game-tile-image" style="background-color: #3498db;"><h3>Launch Studio</h3></div>
-                    <div class="game-tile-content"><h4>Start Building</h4><p>Launch the game creation software.</p></div>
-                </div>
-                <div class="game-tile" onclick="alert('Opening Documentation Mock...');" style="cursor: pointer;">
-                    <div class="game-tile-image" style="background-color: #e67e22;"><h3>Documentation</h3></div>
-                    <div class="game-tile-content"><h4>Learn Scripting</h4><p>Tutorials and API references.</p></div>
-                </div>
-            </div>
-
-            <h2 class="section-title">📚 Developer Resources</h2>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px; border-bottom: 1px dashed var(--roblox-border); padding-bottom: 5px;">
-                    <a href="#" style="color: var(--roblox-blue); text-decoration: none;" onclick="alert('Viewing Forum post...');">Developer Forum: Ask Questions</a>
-                </li>
-            </ul>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
-</body>
+        // If countdown finished
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "🎉 **MINEBLOCK** is officially released and available for download!";
+        }
+      }, 1000);
+    </script>
+  </body>
 </html>
