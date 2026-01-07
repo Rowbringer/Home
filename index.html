@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>MINEBLOCKY</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
       /* -------------------------------------------
             MINEBLOCKY 3D THEME CSS
@@ -11,20 +12,22 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: 'Courier New', Courier, monospace, sans-serif; /* Monospaced font for a retro blocky feel */
+        font-family: Verdana, Arial, sans-serif; /* Fallback for general text */
         background-color: #C5D5A5; /* Light green/grass */
         background-image: linear-gradient(to bottom, #C5D5A5 0%, #9DB38A 100%); /* Subtle earth-like gradient */
         color: #000000;
         text-align: center;
       }
 
-      /* Main header styled like classic block-game text */
+      /* Main header styled like classic block-game text with a pixel font */
       h1 {
-        font-size: 3rem;
+        font-family: 'VT323', monospace; /* Pixelated Minecraft-like font */
+        font-size: 4.5rem; /* Larger for impact */
         margin: 30px 0 5px;
         color: #4C7F2E; /* Dark green (grass/leaf color) */
-        font-weight: bold;
-        text-shadow: 3px 3px 0px #ffffff; /* Blocky outline effect */
+        font-weight: normal; /* VT323 is monospace, so font-weight is less effective */
+        text-shadow: 6px 6px 0px #000000, -3px -3px 0px #ffffff; /* Heavy black shadow and white inner bevel */
+        line-height: 1;
       }
 
       /* Credits text */
@@ -50,10 +53,11 @@
 
       /* Section headers within the container - Simple and blocky */
       #content-container h2 {
-        font-size: 1.8rem;
+        font-family: 'VT323', monospace; /* Pixelated Minecraft-like font */
+        font-size: 2.5rem; /* Larger and blockier */
         margin: 15px 0;
         color: #333333; /* Dark headers */
-        font-weight: bold;
+        font-weight: normal;
         border-bottom: 2px solid #6B493E; /* Separator line */
         padding-bottom: 5px;
       }
@@ -97,20 +101,6 @@
         box-shadow: 0 0px 0 #334D2A; /* Shadow disappears when pressed */
       }
       
-      /* --- Sketchfab Embed Styling for Sneak Peak --- */
-      .sketchfab-embed-wrapper {
-          width: 90%;
-          max-width: 550px;
-          margin: 20px auto;
-          border: 3px solid #6B493E; /* Frame the viewer with dirt color */
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-      .sketchfab-embed-wrapper iframe {
-          width: 100%;
-          height: 350px; /* Set a fixed height for the viewer */
-          display: block;
-      }
-
       /* Styling for the video thumbnail and overlay */
       #preview-section {
           margin: 20px 0;
@@ -132,7 +122,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
         color: white;
         display: flex;
         justify-content: center;
@@ -142,11 +132,16 @@
         font-weight: bold;
         text-shadow: 0 0 5px black;
         text-align: center;
+        /* Apply pixel font to the overlay text */
+        font-family: 'VT323', monospace;
       }
       .preview-overlay h3 {
         margin: 5px 0;
         color: #F0E68C;
-        font-size: 1.5rem;
+        font-size: 2.5rem; /* Make header big and blocky */
+      }
+      .preview-overlay span {
+        font-size: 1.8rem;
       }
       .hidden {
           display: none;
@@ -154,8 +149,9 @@
 
       /* Countdown styling */
       .countdown-box {
+        font-family: 'VT323', monospace; /* Pixelated font for countdown */
         font-size: 1.6rem;
-        font-weight: bold;
+        font-weight: normal;
         color: #A0522D; /* Sienna/Dirt color for countdown */
         margin: 15px 0;
         padding: 15px;
@@ -167,7 +163,7 @@
       }
       .countdown-label {
           display: block;
-          font-size: 1rem;
+          font-size: 1.4rem;
           color: #333;
           margin-bottom: 5px;
       }
@@ -180,7 +176,7 @@
     
     <div id="content-container">
       
-      <h2>Downloads - The World Awaits! (Releasing Soon)</h2>
+      <h2>Downloads - The World Awaits!</h2>
       
       <div id="main-countdown" class="countdown-box">
           <span class="countdown-label">Estimated Full Release:</span>
@@ -202,7 +198,7 @@
           <img id="video-thumbnail" src="https://img.youtube.com/vi/JTcYrRXUiZE/hqdefault.jpg" alt="Mineblocky Video Preview Thumbnail" class="video-thumbnail">
           
           <div id="preview-countdown-overlay" class="preview-overlay">
-              <h3>Preview Reveal In:</h3>
+              <h3>PREVIEW REVEAL IN:</h3>
               <span id="preview-countdown">0d 0h 0m 0s</span>
           </div>
 
@@ -217,24 +213,18 @@
         <br><br>
         Place and break blocks with ease using old-school block physics. Craft tools, armor, and elaborate structures. The world is pre-loaded with biomes to explore and hidden dungeons to conquer. Prepare for an authentic, immersive experience with classic sound effects and endless exploration—all available without needing an internet connection!
       </p>
-      <h2>Game Sneak Peak (3D Block Model)</h2>
-      <div class="sketchfab-embed-wrapper"> 
-          <iframe title="Classic Blocky World Map Preview" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a032ecf352844b79a8c7861310cfcc2d/embed"> </iframe> 
-          <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center;"> 
-              <a href="https://sketchfab.com/3d-models/glass-houses-classic-roblox-map-a032ecf352844b79a8c7861310cfcc2d?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> Classic Blocky World Map </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;">Sketchfab</a>
-          </p>
-      </div>
     </div>
     
     <script>
       // ----------------------------------------------------
       // COUNTDOWN TIMERS
+      // The current time is Wednesday, January 7, 2026 2:14:17 AM EST
       // ----------------------------------------------------
       
-      // Main Release Date (2 months from today: Jan 7, 2026 -> March 7, 2026)
+      // Main Release Date (March 7, 2026)
       var releaseDate = new Date("Mar 7, 2026 00:00:00").getTime();
       
-      // Preview Reveal Date (about 1 week from today: Jan 7, 2026 -> Jan 14, 2026)
+      // Preview Reveal Date (January 14, 2026)
       var previewDate = new Date("Jan 14, 2026 00:00:00").getTime();
 
       // Get elements
@@ -256,6 +246,7 @@
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
           if (distance < 0) {
+              // Countdown finished
               element.innerHTML = releaseMessage;
               if (isPreview) {
                   // Hide the overlay and show the button/link
@@ -264,11 +255,13 @@
                   // Make the thumbnail itself clickable
                   if (videoThumbnailEl) {
                       videoThumbnailEl.style.cursor = "pointer";
-                      videoThumbnailEl.parentElement.href = "http://www.youtube.com/watch?v=JTcYrRXUiZE";
+                      // Set the image's parent anchor tag to the actual video link
+                      videoThumbnailEl.parentElement.href = "http://www.youtube.com/watch?v=JTcYrRXUiZE"; 
                   }
               }
               return true; // Countdown finished
           } else {
+              // Countdown running
               element.innerHTML = 
                   days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
               return false; // Countdown running
@@ -281,7 +274,7 @@
           var mainFinished = updateCountdown(
               releaseDate, 
               releaseCountdownEl, 
-              "🎉 **MINEBLOCKY** is officially released! Download Now!", 
+              "🎉 MINEBLOCKY IS RELEASED! DOWNLOAD NOW!", 
               false
           );
 
@@ -289,23 +282,24 @@
           var previewFinished = updateCountdown(
               previewDate, 
               previewCountdownEl, 
-              "🔥 The preview is live!", 
+              "🔥 THE PREVIEW IS LIVE!", 
               true
           );
 
-          // Clear interval if both are finished (optional, but good practice)
+          // Clear interval if both are finished
           if (mainFinished && previewFinished) {
                clearInterval(interval);
           }
       }, 1000);
       
-      // Initialize the button visibility based on whether the preview is already past
-      // This is handled in the first run of the interval, but keeping a fallback structure.
+      // Initial state check for the thumbnail link
       if (new Date().getTime() >= previewDate) {
+          // If the date is already past, ensure the link is active and the overlay is hidden
+          if (videoThumbnailEl) videoThumbnailEl.parentElement.href = "http://www.youtube.com/watch?v=JTcYrRXUiZE";
           if (previewOverlayEl) previewOverlayEl.classList.add("hidden");
           if (watchButtonAreaEl) watchButtonAreaEl.classList.remove("hidden");
       } else {
-          // If not released yet, ensure the thumbnail is just an image until the counter finishes
+          // If not released yet, prevent clicking the thumbnail directly
           if (videoThumbnailEl) videoThumbnailEl.parentElement.href = "#";
       }
 
