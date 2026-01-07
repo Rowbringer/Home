@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MINEBLOCK</title>
+    <title>MINEBLOCKY</title>
     <style>
       /* -------------------------------------------
-            MINEBLOCK 3D THEME CSS
+            MINEBLOCKY 3D THEME CSS
             ------------------------------------------- */
       /* General body styling: Earth tones for a block-building theme */
       body {
@@ -111,27 +111,53 @@
           display: block;
       }
 
-      /* Styling for the video thumbnail */
+      /* Styling for the video thumbnail and overlay */
+      #preview-section {
+          margin: 20px 0;
+          position: relative;
+          display: inline-block;
+      }
       .video-thumbnail {
         max-width: 100%;
         height: auto;
         border: 3px solid #4C7F2E; /* Green border */
         border-radius: 0;
-        margin: 15px 0 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
+        display: block;
       }
-      
-      #preview-section {
-          margin: 20px 0;
+      /* Placeholder overlay for countdown */
+      .preview-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px black;
+        text-align: center;
+      }
+      .preview-overlay h3 {
+        margin: 5px 0;
+        color: #F0E68C;
+        font-size: 1.5rem;
+      }
+      .hidden {
+          display: none;
       }
 
       /* Countdown styling */
-      #countdown {
+      .countdown-box {
         font-size: 1.6rem;
         font-weight: bold;
         color: #A0522D; /* Sienna/Dirt color for countdown */
-        margin: 30px 0;
+        margin: 15px 0;
         padding: 15px;
         background-color: #F0E68C; /* Khaki/Sand color */
         border: 2px solid #6B493E;
@@ -139,41 +165,55 @@
         display: inline-block;
         text-align: center;
       }
+      .countdown-label {
+          display: block;
+          font-size: 1rem;
+          color: #333;
+          margin-bottom: 5px;
+      }
     </style>
   </head>
   <body>
-    <h1>MINEBLOCK!</h1>
+    <h1>MINEBLOCKY!</h1>
     
-    <p id="credits">made by BlockDev Studio</p>
+    <p id="credits">made by topducky entertainment</p>
     
     <div id="content-container">
       
-      <h2>Downloads - The World Awaits!</h2>
+      <h2>Downloads - The World Awaits! (Releasing Soon)</h2>
       
-      <p style="text-align: center;">
-        <a href="https://google.com/" class="download-button">download mineblock classic 1.0</a>
-        <a href="https://google.com/" class="download-button">download mineblock adventure 2.0</a>
-        <a href="https://google.com/" class="download-button">download mineblock survival 3.0</a>
-      </p>
+      <div id="main-countdown" class="countdown-box">
+          <span class="countdown-label">Estimated Full Release:</span>
+          <span id="release-countdown">0d 0h 0m 0s</span>
+      </div>
 
       <p style="text-align: center;">
-        Click on any version—you will be led to a third-party site where you can download the ultimate block-building experience.
+        <a href="#countdown-info" class="download-button">Pre-Order Link (Coming Soon)</a>
+        <a href="#countdown-info" class="download-button">Beta Sign-Up (Coming Soon)</a>
+      </p>
+
+      <p>
+        The full version of MineBlocky, featuring infinite worlds and full crafting systems, will be available soon! Check the countdown above.
       </p>
       
-      <h2>Watch Preview MINEBLOCK 3D Survival Sim!!</h2>
+      <h2>Watch The Official Preview!!</h2>
 
       <div id="preview-section">
-          <a href="http://www.youtube.com/watch?v=JTcYrRXUiZE" target="_blank" title="Watch Mineblock Preview on YouTube">
-              <img src="https://img.youtube.com/vi/JTcYrRXUiZE/hqdefault.jpg" alt="Mineblock Video Preview Thumbnail" class="video-thumbnail">
-          </a>
-          <p style="text-align: center;">
-              <a href="http://www.youtube.com/watch?v=JTcYrRXUiZE" class="download-button" target="_blank">Watch Preview</a>
+          <img id="video-thumbnail" src="https://img.youtube.com/vi/JTcYrRXUiZE/hqdefault.jpg" alt="Mineblocky Video Preview Thumbnail" class="video-thumbnail">
+          
+          <div id="preview-countdown-overlay" class="preview-overlay">
+              <h3>Preview Reveal In:</h3>
+              <span id="preview-countdown">0d 0h 0m 0s</span>
+          </div>
+
+          <p id="watch-button-area" class="hidden" style="text-align: center;">
+              <a href="http://www.youtube.com/watch?v=JTcYrRXUiZE" class="download-button" target="_blank">Watch Official Preview!</a>
           </p>
       </div>
 
-      <h2>About MINEBLOCK (The Blocky World)</h2>
+      <h2>About MINEBLOCKY (The Blocky World)</h2>
       <p>
-        **MINEBLOCK** is your definitive single-player offline sandbox simulation, dedicated to the golden age of block-building and survival gaming. Explore infinite, procedurally generated worlds made entirely of textured cubes! The experience includes all your favorite survival mechanics, from resource gathering and crafting to fighting mobs and exploring deep caves. 
+        **MINEBLOCKY** is your definitive single-player offline sandbox simulation, dedicated to the golden age of block-building and survival gaming. Explore infinite, procedurally generated worlds made entirely of textured cubes! The experience includes all your favorite survival mechanics, from resource gathering and crafting to fighting mobs and exploring deep caves. 
         <br><br>
         Place and break blocks with ease using old-school block physics. Craft tools, armor, and elaborate structures. The world is pre-loaded with biomes to explore and hidden dungeons to conquer. Prepare for an authentic, immersive experience with classic sound effects and endless exploration—all available without needing an internet connection!
       </p>
@@ -181,41 +221,94 @@
       <div class="sketchfab-embed-wrapper"> 
           <iframe title="Classic Blocky World Map Preview" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/a032ecf352844b79a8c7861310cfcc2d/embed"> </iframe> 
           <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center;"> 
-              <a href="https://sketchfab.com/3d-models/glass-houses-classic-roblox-map-a032ecf352844b79a8c7861310cfcc2d?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> Classic Blocky World Map </a> by <a href="https://sketchfab.com/djsalimh14?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> djsalimh14 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;">Sketchfab</a>
+              <a href="https://sketchfab.com/3d-models/glass-houses-classic-roblox-map-a032ecf352844b79a8c7861310cfcc2d?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;"> Classic Blocky World Map </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=a032ecf352844b79a8c7861310cfcc2d" target="_blank" rel="nofollow" style="font-weight: bold; color: #4C7F2E;">Sketchfab</a>
           </p>
       </div>
-      <div id="countdown"></div>
     </div>
     
     <script>
       // ----------------------------------------------------
-      // COUNTDOWN TIMER MODIFIED TO DISPLAY "OUT NOW"
+      // COUNTDOWN TIMERS
       // ----------------------------------------------------
-      // Set to a date in the past so it immediately shows the "released" message
-      var countDownDate = new Date("Jan 1, 2020 00:00:00").getTime();
+      
+      // Main Release Date (2 months from today: Jan 7, 2026 -> March 7, 2026)
+      var releaseDate = new Date("Mar 7, 2026 00:00:00").getTime();
+      
+      // Preview Reveal Date (about 1 week from today: Jan 7, 2026 -> Jan 14, 2026)
+      var previewDate = new Date("Jan 14, 2026 00:00:00").getTime();
 
-      // Update every second
-      var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
+      // Get elements
+      var releaseCountdownEl = document.getElementById("release-countdown");
+      var previewCountdownEl = document.getElementById("preview-countdown");
+      var previewOverlayEl = document.getElementById("preview-countdown-overlay");
+      var watchButtonAreaEl = document.getElementById("watch-button-area");
+      var videoThumbnailEl = document.getElementById("video-thumbnail");
 
-        // Time calculations
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display result (will show negative if future date is used)
-        document.getElementById("countdown").innerHTML =
-          "First release drops in " + days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
+      function updateCountdown(targetDate, element, releaseMessage, isPreview) {
+          var now = new Date().getTime();
+          var distance = targetDate - now;
 
-        // If countdown finished
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown").innerHTML = "🎉 **MINEBLOCK** is officially released and available for download!";
-        }
+          // Time calculations
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          if (distance < 0) {
+              element.innerHTML = releaseMessage;
+              if (isPreview) {
+                  // Hide the overlay and show the button/link
+                  if (previewOverlayEl) previewOverlayEl.classList.add("hidden");
+                  if (watchButtonAreaEl) watchButtonAreaEl.classList.remove("hidden");
+                  // Make the thumbnail itself clickable
+                  if (videoThumbnailEl) {
+                      videoThumbnailEl.style.cursor = "pointer";
+                      videoThumbnailEl.parentElement.href = "http://www.youtube.com/watch?v=JTcYrRXUiZE";
+                  }
+              }
+              return true; // Countdown finished
+          } else {
+              element.innerHTML = 
+                  days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+              return false; // Countdown running
+          }
+      }
+
+      // Master interval to update both timers
+      var interval = setInterval(function() {
+          // Update Main Release Countdown
+          var mainFinished = updateCountdown(
+              releaseDate, 
+              releaseCountdownEl, 
+              "🎉 **MINEBLOCKY** is officially released! Download Now!", 
+              false
+          );
+
+          // Update Preview Reveal Countdown
+          var previewFinished = updateCountdown(
+              previewDate, 
+              previewCountdownEl, 
+              "🔥 The preview is live!", 
+              true
+          );
+
+          // Clear interval if both are finished (optional, but good practice)
+          if (mainFinished && previewFinished) {
+               clearInterval(interval);
+          }
       }, 1000);
+      
+      // Initialize the button visibility based on whether the preview is already past
+      // This is handled in the first run of the interval, but keeping a fallback structure.
+      if (new Date().getTime() >= previewDate) {
+          if (previewOverlayEl) previewOverlayEl.classList.add("hidden");
+          if (watchButtonAreaEl) watchButtonAreaEl.classList.remove("hidden");
+      } else {
+          // If not released yet, ensure the thumbnail is just an image until the counter finishes
+          if (videoThumbnailEl) videoThumbnailEl.parentElement.href = "#";
+      }
+
     </script>
   </body>
 </html>
